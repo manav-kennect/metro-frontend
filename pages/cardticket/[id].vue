@@ -71,7 +71,8 @@ async function handleCardFunction() {
       }
       await axios.post(`http://localhost:11001/api/card/checkin`,data).then(res=>{
         if(res.data.ok ) {
-          // document.window.reload()
+          alert("Successfully Checked In")
+          location.reload()
         }
         else {
             alert(res.data.result)
@@ -86,7 +87,8 @@ async function handleCardFunction() {
       }
       await axios.post(`http://localhost:11001/api/card/checkout`,data).then(res=>{
           if(res.data.ok) {
-            document.window.reload();
+            alert("Successfully Checked Out")
+          location.reload()
           }
           else {
             alert(res.data.result)
@@ -100,10 +102,9 @@ async function handleCardFunction() {
 
 onMounted(async () => {
     myToken.value = JSON.parse(localStorage.getItem('employee_token'))['token']
-    myToken.value = JSON.parse(localStorage.getItem('employee_token'))['token']
-    user.value =  myToken.value = JSON.parse(localStorage.getItem('employee_token'))['user']
-    await axios.get(`http://localhost:11001/api/card?user=${'manav'}`).then(res=>{
-            if(res.data.result.user !== 'manav') {
+    user.value =  myToken.value = JSON.parse(localStorage.getItem('employee_token'))['user']['username']
+    await axios.get(`http://localhost:11001/api/card?user=${user.value}`).then(res=>{
+            if(res.data.result.user !== user.value) {
                 navigateTo('/')
             }
             else {
