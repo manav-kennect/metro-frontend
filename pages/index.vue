@@ -161,9 +161,9 @@
                         </v-autocomplete>
                         <v-btn v-if="dialogTicket.status === 'active'" variant="text"
                           @click="checkInTicket(dialogTicket)">Check In</v-btn>
-                        <v-btn v-else-if="dialogTicket.status === 'checkedin'" variant="text"
+                        <!-- <v-btn v-else-if="dialogTicket.status === 'checkedin'" variant="text"
                           @click="checkOutTicket(dialogTicket)">Check Out</v-btn>
-                        <v-btn v-else variant="text">Checked Out</v-btn>
+                        <v-btn v-else variant="text">Checked Out</v-btn> -->
                         <v-btn variant="text" @click="viewTicketDialog = false">Close</v-btn>
                       </v-card-actions>
                     </v-card>
@@ -316,7 +316,7 @@
                               style="font-size: 12px; font-weight: bold; margin-left: 10px; margin-top: 3px;">{{
                                 dialogTicket.created_at }}</span>
                           </v-row>
-                          <v-row>
+                          <v-row v-if="dialogTicket.checkoutat">
                             Checked Out At<span
                               style="font-size: 12px; font-weight: bold; margin-left: 10px; margin-top: 3px;">{{
                                 dialogTicket.checkoutat }}</span>
