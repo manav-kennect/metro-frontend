@@ -36,7 +36,7 @@ async function generateCard() {
     await axios.post(`https://metro-backend-one.vercel.app/api/card`, carddata).then(res=>{
         if(res.data.ok === true) {
             console.log(res.data)
-            qrlink.value = `https://metro-frontend-sigma.vercel.app/cardticket/${res.data.result.cardnumber}`
+            qrlink.value = `https://metro-frontend-eta.vercel.app/cardticket/${res.data.result.cardnumber}`
             viewcard.value = true;
             
         }
@@ -51,7 +51,7 @@ onMounted(async ()=> {
         await axios.get(`https://metro-backend-one.vercel.app/api/card?user=${username.value}`).then(res=>{
             if(res.data.ok = true) {
                 console.log(res.data)
-                qrlink.value = `https://metro-frontend-sigma.vercel.app/cardticket/${res.data.result.cardnumber}`
+                qrlink.value = `https://metro-frontend-eta.vercel.app/cardticket/${res.data.result.cardnumber}`
                 amount.value = res.data.result.amount
                 viewcard.value = true;
 
