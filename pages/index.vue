@@ -156,14 +156,8 @@
                         <v-autocomplete  v-model="check_in_station" :items="check_in_station_obj"
                           item-title="check_in_station_name" item-value="check_in_station_id" label="Check In From">
                         </v-autocomplete>
-                        <!-- <v-autocomplete v-if="dialogTicket.status === 'checkedin'" v-model="check_out_station"
-                          :items="items" item-title="station_name" item-value="station_id" label="Check Out From">
-                        </v-autocomplete> -->
                         <v-btn  variant="text"
                           @click="checkInTicket(dialogTicket)">Check In</v-btn>
-                        <!-- <v-btn v-else-if="dialogTicket.status === 'checkedin'" variant="text"
-                          @click="checkOutTicket(dialogTicket)">Check Out</v-btn>
-                        <v-btn v-else variant="text">Checked Out</v-btn> -->
                         <v-btn variant="text" @click="viewTicketDialog = false">Close</v-btn>
                       </v-card-actions>
                     </v-card>
@@ -246,7 +240,6 @@
                         </v-autocomplete>
                         <v-btn  variant="text"
                           @click="checkOutTicket(dialogTicket)">Check Out</v-btn>
-                        <!-- <v-btn v-else variant="text">Checked Out</v-btn> -->
                         <v-btn variant="text" @click="viewTicketDialog = false">Close</v-btn>
                       </v-card-actions>
                     </v-card>
