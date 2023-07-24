@@ -148,18 +148,18 @@
                           <v-row>
                             Valid Upto <span
                               style="font-size: 12px; font-weight: bold; margin-left: 10px; margin-top: 3px;">{{
-                                dialogTicket.valid_upto }}</span>
+                                dialogTicket['valid_upto'] }}</span>
                           </v-row>
                         </v-container>
                       </v-card-text>
                       <v-card-actions class="justify-end">
-                        <v-autocomplete v-if="dialogTicket.status === 'active'" v-model="check_in_station" :items="check_in_station_obj"
+                        <v-autocomplete  v-model="check_in_station" :items="check_in_station_obj"
                           item-title="check_in_station_name" item-value="check_in_station_id" label="Check In From">
                         </v-autocomplete>
-                        <v-autocomplete v-if="dialogTicket.status === 'checkedin'" v-model="check_out_station"
+                        <!-- <v-autocomplete v-if="dialogTicket.status === 'checkedin'" v-model="check_out_station"
                           :items="items" item-title="station_name" item-value="station_id" label="Check Out From">
-                        </v-autocomplete>
-                        <v-btn v-if="dialogTicket.status === 'active'" variant="text"
+                        </v-autocomplete> -->
+                        <v-btn  variant="text"
                           @click="checkInTicket(dialogTicket)">Check In</v-btn>
                         <!-- <v-btn v-else-if="dialogTicket.status === 'checkedin'" variant="text"
                           @click="checkOutTicket(dialogTicket)">Check Out</v-btn>
