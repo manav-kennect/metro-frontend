@@ -59,7 +59,7 @@ watch(source_city, async () => {
   source_station.value = ""
   destined_station.value = ""
   await axios.get(`https://metro-backend-one.vercel.app/api/station-list?city=${source_city.value}`, { headers: { 'authorization': myToken.value, 'Content-Type': 'application/json' } }).then(res => {
-    items.value = res.data
+    items.value = res.data.station_details
   })
 })
 

@@ -388,7 +388,7 @@ async function viewTicket(ticket) {
     'check_in_station_id' : ticket.source_id,
   })
   await axios.get(`https://metro-backend-one.vercel.app/api/station-list?city=${ticket.city}`, { headers: { 'authorization': myToken.value, 'Content-Type': 'application/json' } }).then(res => {
-    items.value = res.data
+    items.value = res.data.station_details
   })
   viewTicketDialog.value = true
 }
@@ -412,7 +412,8 @@ watch(source_city, async () => {
   destined_station.value = ""
   console.log(source_city.value)
   await axios.get(`https://metro-backend-one.vercel.app/api/station-list?city=${source_city.value}`, { headers: { 'authorization': myToken.value, 'Content-Type': 'application/json' } }).then(res => {
-    items.value = res.data
+    console.log(res.data)
+    items.value = res.data.station_details
   })
 })
 
