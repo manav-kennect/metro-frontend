@@ -74,7 +74,7 @@
             name: this.name
           };
           await axios
-            .post("http://localhost:11001/api/addUser", data)
+            .post("https://metro-backend-one.vercel.app/api/addUser", data)
             .then((response) => {
               console.log(response.data);
               if(response.data["ok"] === true){

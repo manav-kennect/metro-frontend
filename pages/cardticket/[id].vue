@@ -58,7 +58,7 @@ const cardstatus = ref("")
 watch(source_city, async () => {
   source_station.value = ""
   destined_station.value = ""
-  await axios.get(`http://localhost:11001/api/station-list?city=${source_city.value}`, { headers: { 'authorization': myToken.value, 'Content-Type': 'application/json' } }).then(res => {
+  await axios.get(`https://metro-backend-one.vercel.app/api/station-list?city=${source_city.value}`, { headers: { 'authorization': myToken.value, 'Content-Type': 'application/json' } }).then(res => {
     items.value = res.data
   })
 })
@@ -69,7 +69,7 @@ async function handleCardFunction() {
         city : source_station.value,
         cardnumber: id
       }
-      await axios.post(`http://localhost:11001/api/card/checkin`,data).then(res=>{
+      await axios.post(`https://metro-backend-one.vercel.app/api/card/checkin`,data).then(res=>{
         if(res.data.ok ) {
           alert("Successfully Checked In")
           location.reload()
@@ -85,7 +85,7 @@ async function handleCardFunction() {
         city: source_city.value,
         cardnumber: id
       }
-      await axios.post(`http://localhost:11001/api/card/checkout`,data).then(res=>{
+      await axios.post(`https://metro-backend-one.vercel.app/api/card/checkout`,data).then(res=>{
           if(res.data.ok) {
             alert("Successfully Checked Out")
           location.reload()
@@ -103,7 +103,7 @@ async function handleCardFunction() {
 onMounted(async () => {
     myToken.value = JSON.parse(localStorage.getItem('employee_token'))['token']
     user.value =  myToken.value = JSON.parse(localStorage.getItem('employee_token'))['user']['username']
-    await axios.get(`http://localhost:11001/api/card?user=${user.value}`).then(res=>{
+    await axios.get(`https://metro-backend-one.vercel.app/api/card?user=${user.value}`).then(res=>{
             if(res.data.result.user !== user.value) {
                 navigateTo('/')
             }

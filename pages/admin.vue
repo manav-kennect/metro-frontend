@@ -62,7 +62,7 @@ import axios from 'axios';
     const myToken = ref("")
 
     async function updateTicket(ticket) {
-        await axios.put(`http://localhost:11001/api/tickets/admin`,ticket,{headers:{'authorization': myToken.value,'Content-Type': 'application/json'}}).then(res=>{
+        await axios.put(`https://metro-backend-one.vercel.app/api/tickets/admin`,ticket,{headers:{'authorization': myToken.value,'Content-Type': 'application/json'}}).then(res=>{
     if(res.data.ok == true) {
       alert("Successfully Updated Ticket")
     }
@@ -73,7 +73,7 @@ import axios from 'axios';
     }
     async function findTicket() {
         if(input_tikcet_id.value) {
-            await axios.get(`http://localhost:11001/api/admin/tickets?tid=${input_tikcet_id.value}`).then(res=>{
+            await axios.get(`https://metro-backend-one.vercel.app/api/admin/tickets?tid=${input_tikcet_id.value}`).then(res=>{
                 if(res.data.ok == true) {
                     dialogTicket.value = res.data.result
                     viewTicketDialog.value = true

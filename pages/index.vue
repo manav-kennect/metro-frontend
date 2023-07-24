@@ -387,7 +387,7 @@ async function viewTicket(ticket) {
     'check_in_station_name' : ticket.source,
     'check_in_station_id' : ticket.source_id,
   })
-  await axios.get(`http://localhost:11001/api/station-list?city=${ticket.city}`, { headers: { 'authorization': myToken.value, 'Content-Type': 'application/json' } }).then(res => {
+  await axios.get(`https://metro-backend-one.vercel.app/api/station-list?city=${ticket.city}`, { headers: { 'authorization': myToken.value, 'Content-Type': 'application/json' } }).then(res => {
     items.value = res.data
   })
   viewTicketDialog.value = true
@@ -395,7 +395,7 @@ async function viewTicket(ticket) {
 
 async function checkInTicket(ticket) {
   console.log(check_in_station.value, "INSIDE CHECK IN TICKER")
-  await axios.post(`http://localhost:11001/api/checkin?cs=${check_in_station.value}`, ticket, { headers: { 'authorization': myToken.value, 'Content-Type': 'application/json' } }).then(res => {
+  await axios.post(`https://metro-backend-one.vercel.app/api/checkin?cs=${check_in_station.value}`, ticket, { headers: { 'authorization': myToken.value, 'Content-Type': 'application/json' } }).then(res => {
     console.log(res.data)
     if (res.data.ok == true) {
       alert("Successfully Checked In")
@@ -410,14 +410,14 @@ async function checkInTicket(ticket) {
 watch(source_city, async () => {
   source_station.value = ""
   destined_station.value = ""
-  await axios.get(`http://localhost:11001/api/station-list?city=${source_city.value}`, { headers: { 'authorization': myToken.value, 'Content-Type': 'application/json' } }).then(res => {
+  await axios.get(`https://metro-backend-one.vercel.app/api/station-list?city=${source_city.value}`, { headers: { 'authorization': myToken.value, 'Content-Type': 'application/json' } }).then(res => {
     items.value = res.data
   })
 })
 
 async function checkOutTicket(ticket) {
   console.log(check_out_station.value)
-  await axios.post(`http://localhost:11001/api/checkout?cs=${check_out_station.value}`, ticket, { headers: { 'authorization': myToken.value, 'Content-Type': 'application/json' } }).then(res => {
+  await axios.post(`https://metro-backend-one.vercel.app/api/checkout?cs=${check_out_station.value}`, ticket, { headers: { 'authorization': myToken.value, 'Content-Type': 'application/json' } }).then(res => {
     if (res.data.ok == true) {
       alert("Successfully Checked Out")
       viewTicketDialog.value = false
@@ -440,7 +440,7 @@ async function payTicket() {
     created_at: created_at.value,
     valid_upto: valid_upto.value,
   }
-  await axios.post('http://localhost:11001/api/tickets', ticket_data, { headers: { 'authorization': myToken.value, 'Content-Type': 'application/json' } }).then(res => {
+  await axios.post('https://metro-backend-one.vercel.app/api/tickets', ticket_data, { headers: { 'authorization': myToken.value, 'Content-Type': 'application/json' } }).then(res => {
     if (res.data.ok == true) {
       alert("Payment Successfull")
       dialog.value = false
@@ -482,7 +482,7 @@ async function getTicketDetails() {
     created_at.value = moment().format("dddd, MMMM Do YYYY, h:mm:ss a")
     valid_upto.value = moment().add(2, 'hours').format("dddd, MMMM Do YYYY, h:mm:ss a");
     isUpdating.value = true;
-    await axios.get(`http://localhost:11001/api/ticket-price?src=${source_station.value}&des=${destined_station.value}&city=${source_city.value}`, { headers: { 'authorization': myToken.value, 'Content-Type': 'application/json' } }).then(res => {
+    await axios.get(`https://metro-backend-one.vercel.app/api/ticket-price?src=${source_station.value}&des=${destined_station.value}&city=${source_city.value}`, { headers: { 'authorization': myToken.value, 'Content-Type': 'application/json' } }).then(res => {
       if (res.data.ok === true) {
         isUpdating.value = false
         console.log(res.data)
@@ -500,7 +500,7 @@ onMounted(async () => {
   username.value = JSON.parse(localStorage.getItem('employee_token'))['user']['username']
   console.log(myToken.value, "TOKENNNNNNNNNN")
 
-  await axios.get(`http://localhost:11001/api/tickets?user=${username.value}`, { headers: { 'authorization': myToken.value, 'Content-Type': 'application/json' } }).then(res => {
+  await axios.get(`https://metro-backend-one.vercel.app/api/tickets?user=${username.value}`, { headers: { 'authorization': myToken.value, 'Content-Type': 'application/json' } }).then(res => {
     const tickets = res.data.result
     tickets.map((item)=>{
       if(item.status === "active") {
