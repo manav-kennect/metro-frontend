@@ -410,6 +410,7 @@ async function checkInTicket(ticket) {
 watch(source_city, async () => {
   source_station.value = ""
   destined_station.value = ""
+  console.log(source_city.value)
   await axios.get(`https://metro-backend-one.vercel.app/api/station-list?city=${source_city.value}`, { headers: { 'authorization': myToken.value, 'Content-Type': 'application/json' } }).then(res => {
     items.value = res.data
   })
