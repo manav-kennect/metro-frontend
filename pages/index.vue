@@ -402,6 +402,7 @@ async function checkInTicket(ticket) {
   await axios.post(`https://metro-backend-one.vercel.app/api/checkin?cs=${check_in_station.value}`, ticket, { headers: { 'authorization': myToken.value, 'Content-Type': 'application/json' } }).then(res => {
     console.log(res.data)
     if (res.data.ok == true) {
+      checkedInTickets.value.unshift(ticket)
       alert("Successfully Checked In")
       viewTicketDialog.value = false
     }
@@ -425,6 +426,7 @@ async function checkOutTicket(ticket) {
   console.log(check_out_station.value)
   await axios.post(`https://metro-backend-one.vercel.app/api/checkout?cs=${check_out_station.value}`, ticket, { headers: { 'authorization': myToken.value, 'Content-Type': 'application/json' } }).then(res => {
     if (res.data.ok == true) {
+      checkedOutTickets.value.unshift(ticket)
       alert("Successfully Checked Out")
       viewCheckedDialog.value = false
     }
@@ -448,6 +450,7 @@ async function payTicket() {
   }
   await axios.post('https://metro-backend-one.vercel.app/api/tickets', ticket_data, { headers: { 'authorization': myToken.value, 'Content-Type': 'application/json' } }).then(res => {
     if (res.data.ok == true) {
+      activeTickets.value.unshift(ticket_data)
       alert("Payment Successfull")
       dialog.value = false
     }
