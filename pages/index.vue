@@ -426,7 +426,7 @@ async function checkOutTicket(ticket) {
   await axios.post(`https://metro-backend-one.vercel.app/api/checkout?cs=${check_out_station.value}`, ticket, { headers: { 'authorization': myToken.value, 'Content-Type': 'application/json' } }).then(res => {
     if (res.data.ok == true) {
       alert("Successfully Checked Out")
-      viewTicketDialog.value = false
+      viewCheckedDialog.value = false
     }
     else {
       alert(res.data.details)
