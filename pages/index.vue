@@ -116,7 +116,7 @@
                 <v-btn color="grey-lighten-1" variant="text" :append-icon="mdiInformation" @click="viewTicket(ticket)"
                   :key="ticket.ticket_id">
                   <v-dialog transition="dialog-bottom-transition" width="auto" v-model="viewTicketDialog"
-                    :key="ticket.ticket_id">
+                    :key="dialogTicket.ticket_id">
                     <v-card min-width="420">
                       <v-toolbar color="primary" title="Your Ticket Details"></v-toolbar>
                       <v-card-text>
@@ -198,7 +198,7 @@
                 <v-btn color="grey-lighten-1" variant="text" :append-icon="mdiInformation" @click="viewTicket(ticket)"
                   :key="ticket.ticket_id">
                   <v-dialog transition="dialog-bottom-transition" width="auto" v-model="viewTicketDialog"
-                    :key="ticket.ticket_id">
+                    :key="dialogTicket.ticket_id">
                     <v-card min-width="420">
                       <v-toolbar color="primary" title="Your Ticket Details"></v-toolbar>
                       <v-card-text>
@@ -280,7 +280,7 @@
                 <v-btn color="grey-lighten-1" variant="text" :append-icon="mdiInformation" @click="viewTicket(ticket)"
                   :key="ticket.ticket_id">
                   <v-dialog transition="dialog-bottom-transition" width="auto" v-model="viewTicketDialog"
-                    :key="ticket.ticket_id">
+                    :key="dialogTicket.ticket_id">
                     <v-card min-width="420">
                       <v-toolbar color="primary" title="Your Ticket Details"></v-toolbar>
                       <v-card-text>
@@ -317,12 +317,12 @@
                         </v-container>
                       </v-card-text>
                       <v-card-actions class="justify-end">
-                        <v-autocomplete v-if="dialogTicket.status === 'active'" v-model="check_in_station" :items="items"
+                        <!-- <v-autocomplete v-if="dialogTicket.status === 'active'" v-model="check_in_station" :items="items"
                           item-title="station_name" item-value="station_id" label="Check In From">
                         </v-autocomplete>
                         <v-autocomplete v-if="dialogTicket.status === 'checkedin'" v-model="check_out_station"
                           :items="items" item-title="station_name" item-value="station_id" label="Check Out From">
-                        </v-autocomplete>
+                        </v-autocomplete> -->
                         <v-btn  variant="text">Checked Out</v-btn>
                         <v-btn variant="text" @click="viewTicketDialog = false">Close</v-btn>
                       </v-card-actions>
@@ -508,6 +508,7 @@ onMounted(async () => {
         checkedOutTickets.value.push(item)
       }
     })
+    console.log(activeTickets.value,checkedInTickets.value,checkedOutTickets.value,"TICKETSSSSSSSSSSSSSs")
   })
 
   
