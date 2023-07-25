@@ -105,7 +105,7 @@ onMounted(async () => {
     user.value =  myToken.value = JSON.parse(localStorage.getItem('employee_token'))['user']['username']
     await axios.get(`https://metro-backend-one.vercel.app/api/card?user=${user.value}`).then(res=>{
             console.log(res.data,"RESSS")
-            if(res.data.result.user !== user.value) {
+            if(res.data.result.cardnumber !== id) {
                 navigateTo('/')
             }
             else {
