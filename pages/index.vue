@@ -197,7 +197,7 @@
               <template v-slot:append :key="ticket.ticket_id">
                 <v-btn color="grey-lighten-1" variant="text" :append-icon="mdiInformation" @click="viewTicket(ticket)"
                   :key="ticket.ticket_id">
-                  <v-dialog transition="dialog-bottom-transition" width="auto" v-model="viewTicketDialog"
+                  <v-dialog transition="dialog-bottom-transition" width="auto" v-model="viewCheckedDialog"
                     :key="dialogTicket.ticket_id">
                     <v-card min-width="420">
                       <v-toolbar color="primary" title="Your Ticket Details"></v-toolbar>
@@ -240,7 +240,7 @@
                         </v-autocomplete>
                         <v-btn  variant="text"
                           @click="checkOutTicket(dialogTicket)">Check Out</v-btn>
-                        <v-btn variant="text" @click="viewTicketDialog = false">Close</v-btn>
+                        <v-btn variant="text" @click="viewCheckedDialog = false">Close</v-btn>
                       </v-card-actions>
                     </v-card>
                   </v-dialog></v-btn>
@@ -279,7 +279,7 @@
               <template v-slot:append :key="ticket.ticket_id">
                 <v-btn color="grey-lighten-1" variant="text" :append-icon="mdiInformation" @click="viewTicket(ticket)"
                   :key="ticket.ticket_id">
-                  <v-dialog transition="dialog-bottom-transition" width="auto" v-model="viewTicketDialog"
+                  <v-dialog transition="dialog-bottom-transition" width="auto" v-model="viewExpiredTicektDialog"
                     :key="dialogTicket.ticket_id">
                     <v-card min-width="420">
                       <v-toolbar color="primary" title="Your Ticket Details"></v-toolbar>
@@ -324,7 +324,7 @@
                           :items="items" item-title="station_name" item-value="station_id" label="Check Out From">
                         </v-autocomplete> -->
                         <v-btn  variant="text">Checked Out</v-btn>
-                        <v-btn variant="text" @click="viewTicketDialog = false">Close</v-btn>
+                        <v-btn variant="text" @click="viewExpiredTicektDialog = false">Close</v-btn>
                       </v-card-actions>
                     </v-card>
                   </v-dialog></v-btn>
@@ -355,6 +355,8 @@ const items = ref([]);
 const tickets = ref([])
 const source_station = ref("");
 const viewTicketDialog = ref(false)
+const viewExpiredTicektDialog = ref(false)
+const viewCheckedDialog = ref(false)
 const activeTickets = ref([])
 const checkedInTickets = ref([])
 const checkedOutTickets = ref([])
@@ -383,7 +385,16 @@ async function viewTicket(ticket) {
   await axios.get(`https://metro-backend-one.vercel.app/api/station-list?city=${ticket.city}`, { headers: { 'authorization': myToken.value, 'Content-Type': 'application/json' } }).then(res => {
     items.value = res.data.station_details
   })
+  if(ticket.status === "active") {
   viewTicketDialog.value = true
+  }
+  else if(ticket.status === "checkedin") {
+    viewCheckedDialog.value = true
+  }
+  else {
+    viewExpiredTicektDialog.value = true;
+  }
+
 }
 
 async function checkInTicket(ticket) {
