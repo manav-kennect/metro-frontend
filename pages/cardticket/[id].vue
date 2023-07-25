@@ -103,7 +103,7 @@ async function handleCardFunction() {
 onMounted(async () => {
     myToken.value = JSON.parse(localStorage.getItem('employee_token'))['token']
     user.value =  myToken.value = JSON.parse(localStorage.getItem('employee_token'))['user']['username']
-    await axios.get(`https://metro-backend-one.vercel.app/api/card?user=${id}`).then(res=>{
+    await axios.get(`https://metro-backend-one.vercel.app/api/card?user=${user.value}`).then(res=>{
             console.log(res.data,"RESSS")
             if(res.data.result.user !== user.value) {
                 navigateTo('/')
