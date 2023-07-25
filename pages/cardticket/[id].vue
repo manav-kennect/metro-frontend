@@ -85,6 +85,7 @@ async function handleCardFunction() {
         city: source_city.value,
         cardnumber: id
       }
+      console.log("daataaaaaaaaa", data)
       await axios.post(`https://metro-backend-one.vercel.app/api/card/checkout`,data).then(res=>{
           if(res.data.ok) {
             alert("Successfully Checked Out")
