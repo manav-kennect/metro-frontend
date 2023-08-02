@@ -12,54 +12,54 @@
     "jsxFragmentFactory": "Fragment",
     "paths": {
       "#imports": [
-        "C:/Users/manav_cmcfada/Kennect/metro-project/metro-frontend/.nuxt/types/nitro-imports"
+        "C:/Users/it_ad/Kennect/metro-frontend/.nuxt/types/nitro-imports"
       ],
       "#paths": [
-        "C:/Users/manav_cmcfada/Kennect/metro-project/metro-frontend/node_modules/nuxt/dist/core/runtime/nitro/paths"
+        "C:/Users/it_ad/Kennect/metro-frontend/node_modules/nuxt/dist/core/runtime/nitro/paths"
       ],
       "~": [
-        "C:/Users/manav_cmcfada/Kennect/metro-project/metro-frontend"
+        "C:/Users/it_ad/Kennect/metro-frontend"
       ],
       "~/*": [
-        "C:/Users/manav_cmcfada/Kennect/metro-project/metro-frontend/*"
+        "C:/Users/it_ad/Kennect/metro-frontend/*"
       ],
       "@": [
-        "C:/Users/manav_cmcfada/Kennect/metro-project/metro-frontend"
+        "C:/Users/it_ad/Kennect/metro-frontend"
       ],
       "@/*": [
-        "C:/Users/manav_cmcfada/Kennect/metro-project/metro-frontend/*"
+        "C:/Users/it_ad/Kennect/metro-frontend/*"
       ],
       "~~": [
-        "C:/Users/manav_cmcfada/Kennect/metro-project/metro-frontend"
+        "C:/Users/it_ad/Kennect/metro-frontend"
       ],
       "~~/*": [
-        "C:/Users/manav_cmcfada/Kennect/metro-project/metro-frontend/*"
+        "C:/Users/it_ad/Kennect/metro-frontend/*"
       ],
       "@@": [
-        "C:/Users/manav_cmcfada/Kennect/metro-project/metro-frontend"
+        "C:/Users/it_ad/Kennect/metro-frontend"
       ],
       "@@/*": [
-        "C:/Users/manav_cmcfada/Kennect/metro-project/metro-frontend/*"
+        "C:/Users/it_ad/Kennect/metro-frontend/*"
       ],
       "assets": [
-        "C:/Users/manav_cmcfada/Kennect/metro-project/metro-frontend/assets"
+        "C:/Users/it_ad/Kennect/metro-frontend/assets"
       ],
       "assets/*": [
-        "C:/Users/manav_cmcfada/Kennect/metro-project/metro-frontend/assets/*"
+        "C:/Users/it_ad/Kennect/metro-frontend/assets/*"
       ],
       "public": [
-        "C:/Users/manav_cmcfada/Kennect/metro-project/metro-frontend/public"
+        "C:/Users/it_ad/Kennect/metro-frontend/public"
       ],
       "public/*": [
-        "C:/Users/manav_cmcfada/Kennect/metro-project/metro-frontend/public/*"
+        "C:/Users/it_ad/Kennect/metro-frontend/public/*"
       ],
       "pinia": [
-        "C:/Users/manav_cmcfada/Kennect/metro-project/metro-frontend/node_modules/pinia/dist/pinia"
+        "C:/Users/it_ad/Kennect/metro-frontend/node_modules/pinia/dist/pinia"
       ]
     }
   },
   "include": [
-    "C:/Users/manav_cmcfada/Kennect/metro-project/metro-frontend/.nuxt/types/nitro-nuxt.d.ts",
+    "C:/Users/it_ad/Kennect/metro-frontend/.nuxt/types/nitro-nuxt.d.ts",
     "./types/nitro.d.ts",
     "../**/*",
     "../server/**/*"

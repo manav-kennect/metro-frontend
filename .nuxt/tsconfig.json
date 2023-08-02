@@ -9,7 +9,7 @@
     "skipLibCheck": true,
     "strict": true,
     "allowJs": true,
-    "baseUrl": "C:/Users/manav_cmcfada/Kennect/metro-project/metro-frontend",
+    "baseUrl": "C:/Users/it_ad/Kennect/metro-frontend",
     "noEmit": true,
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
@@ -18,70 +18,70 @@
     ],
     "paths": {
       "~": [
-        "C:/Users/manav_cmcfada/Kennect/metro-project/metro-frontend"
+        "C:/Users/it_ad/Kennect/metro-frontend"
       ],
       "~/*": [
-        "C:/Users/manav_cmcfada/Kennect/metro-project/metro-frontend/*"
+        "C:/Users/it_ad/Kennect/metro-frontend/*"
       ],
       "@": [
-        "C:/Users/manav_cmcfada/Kennect/metro-project/metro-frontend"
+        "C:/Users/it_ad/Kennect/metro-frontend"
       ],
       "@/*": [
-        "C:/Users/manav_cmcfada/Kennect/metro-project/metro-frontend/*"
+        "C:/Users/it_ad/Kennect/metro-frontend/*"
       ],
       "~~": [
-        "C:/Users/manav_cmcfada/Kennect/metro-project/metro-frontend"
+        "C:/Users/it_ad/Kennect/metro-frontend"
       ],
       "~~/*": [
-        "C:/Users/manav_cmcfada/Kennect/metro-project/metro-frontend/*"
+        "C:/Users/it_ad/Kennect/metro-frontend/*"
       ],
       "@@": [
-        "C:/Users/manav_cmcfada/Kennect/metro-project/metro-frontend"
+        "C:/Users/it_ad/Kennect/metro-frontend"
       ],
       "@@/*": [
-        "C:/Users/manav_cmcfada/Kennect/metro-project/metro-frontend/*"
+        "C:/Users/it_ad/Kennect/metro-frontend/*"
       ],
       "assets": [
-        "C:/Users/manav_cmcfada/Kennect/metro-project/metro-frontend/assets"
+        "C:/Users/it_ad/Kennect/metro-frontend/assets"
       ],
       "assets/*": [
-        "C:/Users/manav_cmcfada/Kennect/metro-project/metro-frontend/assets/*"
+        "C:/Users/it_ad/Kennect/metro-frontend/assets/*"
       ],
       "public": [
-        "C:/Users/manav_cmcfada/Kennect/metro-project/metro-frontend/public"
+        "C:/Users/it_ad/Kennect/metro-frontend/public"
       ],
       "public/*": [
-        "C:/Users/manav_cmcfada/Kennect/metro-project/metro-frontend/public/*"
+        "C:/Users/it_ad/Kennect/metro-frontend/public/*"
       ],
       "#app": [
-        "C:/Users/manav_cmcfada/Kennect/metro-project/metro-frontend/node_modules/nuxt/dist/app"
+        "C:/Users/it_ad/Kennect/metro-frontend/node_modules/nuxt/dist/app"
       ],
       "#app/*": [
-        "C:/Users/manav_cmcfada/Kennect/metro-project/metro-frontend/node_modules/nuxt/dist/app/*"
+        "C:/Users/it_ad/Kennect/metro-frontend/node_modules/nuxt/dist/app/*"
       ],
       "vue-demi": [
-        "C:/Users/manav_cmcfada/Kennect/metro-project/metro-frontend/node_modules/nuxt/dist/app/compat/vue-demi"
+        "C:/Users/it_ad/Kennect/metro-frontend/node_modules/nuxt/dist/app/compat/vue-demi"
       ],
       "pinia": [
-        "C:/Users/manav_cmcfada/Kennect/metro-project/metro-frontend/node_modules/pinia/dist/pinia"
+        "C:/Users/it_ad/Kennect/metro-frontend/node_modules/pinia/dist/pinia"
       ],
       "#vue-router": [
-        "C:/Users/manav_cmcfada/Kennect/metro-project/metro-frontend/.nuxt/vue-router"
+        "C:/Users/it_ad/Kennect/metro-frontend/.nuxt/vue-router"
       ],
       "#imports": [
-        "C:/Users/manav_cmcfada/Kennect/metro-project/metro-frontend/.nuxt/imports"
+        "C:/Users/it_ad/Kennect/metro-frontend/.nuxt/imports"
       ],
       "#build": [
-        "C:/Users/manav_cmcfada/Kennect/metro-project/metro-frontend/.nuxt"
+        "C:/Users/it_ad/Kennect/metro-frontend/.nuxt"
       ],
       "#build/*": [
-        "C:/Users/manav_cmcfada/Kennect/metro-project/metro-frontend/.nuxt/*"
+        "C:/Users/it_ad/Kennect/metro-frontend/.nuxt/*"
       ],
       "#pwa": [
         ".nuxt/types/pwa"
       ],
       "#components": [
-        "C:/Users/manav_cmcfada/Kennect/metro-project/metro-frontend/.nuxt/components"
+        "C:/Users/it_ad/Kennect/metro-frontend/.nuxt/components"
       ]
     }
   },

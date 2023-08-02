@@ -1,5 +1,5 @@
 
-import { defuFn } from 'C:/Users/manav_cmcfada/Kennect/metro-project/metro-frontend/node_modules/defu/dist/defu.mjs'
+import { defuFn } from 'C:/Users/it_ad/Kennect/metro-frontend/node_modules/defu/dist/defu.mjs'
 
 const inlineConfig = {}
 
