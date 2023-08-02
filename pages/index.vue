@@ -431,7 +431,12 @@ async function checkOutTicket(ticket) {
   console.log(check_out_station.value)
   await axios.post(`https://metro-backend-one.vercel.app/api/checkout?cs=${check_out_station.value}`, ticket, { headers: { 'authorization': myToken.value, 'Content-Type': 'application/json' } }).then(res => {
     if (res.data.ok == true) {
-      checkedOutTickets.value.unshift(ticket)
+      const index = checkedInTickets.value.findIndex((obj)=> obj.ticket_id === ticket.ticket_id)
+      console.log("CHECKIN INDEX",index)
+      if(index != -1) {
+        checkedInTickets.value.splice(index,1)
+        checkedOutTickets.value.unshift(ticket)
+      }
       alert("Successfully Checked Out")
       viewCheckedDialog.value = false
     }
