@@ -102,7 +102,7 @@
                         </v-col>
                         <v-spacer></v-spacer> 
                         <v-col >
-                          Fare: 20
+                          Fare: {{ ticket.fare }}
                         </v-col>
                         </v-row>
                     </v-container>
@@ -184,7 +184,7 @@
                         </v-col>
                         <v-spacer></v-spacer> 
                         <v-col >
-                          Fare: 20
+                          Fare: {{ ticket.fare }}
                         </v-col>
                         </v-row>
                     </v-container>
@@ -261,12 +261,12 @@
                       <v-row no-gutters >
                         <v-col >
                           <div>
-                          <span style="color: grey">{{ ticket.source }}</span> >> <span style="color: grey">{{ ticket.destination }}</span>
+                          <span style="color: grey">{{ ticket.source }}</span>  <span v-if="ticket.via">{{ ticket.via }}</span> >> <span style="color: grey">{{ ticket.destination }}</span>
                           </div>
                         </v-col>
                         <v-spacer></v-spacer> 
                         <v-col >
-                          Fare: 20
+                          Fare: {{ ticket.fare }}
                         </v-col>
                         </v-row>
                     </v-container>
@@ -374,7 +374,7 @@ const created_at = ref("")
 const valid_upto = ref("")
 const myToken = ref('')
 const check_in_station_obj = ref([])
-
+const ticket_via = ref("")
 async function viewTicket(ticket) {
   check_in_station_obj.value = []
   dialogTicket.value = ticket;
@@ -457,6 +457,8 @@ async function payTicket() {
     city: source_city.value,
     created_at: created_at.value,
     valid_upto: valid_upto.value,
+    fare: ticket_fare.value,
+    via: ticket_via.value,
   }
   await axios.post('https://metro-backend-one.vercel.app/api/tickets', ticket_data, { headers: { 'authorization': myToken.value, 'Content-Type': 'application/json' } }).then(res => {
     if (res.data.ok == true) {
@@ -506,6 +508,7 @@ async function getTicketDetails() {
         isUpdating.value = false
         console.log(res.data)
         ticket_fare.value = res.data.ticketPrice
+        ticket_via.value = res.data.via
         dialog.value = true
       }
     })
