@@ -97,7 +97,7 @@
                       <v-row no-gutters >
                         <v-col >
                           <div>
-                          <span style="color: green">{{ ticket.source }}</span> >> <span style="color: red">{{ ticket.destination }}</span>
+                          <span style="color: green">{{ ticket.source }}</span> >> <span v-if="ticket.via">{{ ticket.via }} >> </span> <span style="color: red">{{ ticket.destination }}</span>
                           </div>
                         </v-col>
                         <v-spacer></v-spacer> 
@@ -179,7 +179,7 @@
                       <v-row no-gutters >
                         <v-col >
                           <div>
-                          <span style="color: green">{{ ticket.source }}</span> >> <span style="color: red">{{ ticket.destination }}</span>
+                          <span style="color: green">{{ ticket.source }}</span> >> <span v-if="ticket.via">{{ ticket.via }} >> </span> <span style="color: red">{{ ticket.destination }}</span>
                           </div>
                         </v-col>
                         <v-spacer></v-spacer> 
